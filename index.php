@@ -8,13 +8,14 @@
   </head>
   <body>
     <div id="container">
-      <h2>Chillerlan QR Code PHP</h2>
+      <h2>chillerlan/php-qrcode</h2>
+      <p>QR Code Generator with PHP</p>
       <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
         <div>
-          <input type="text" name="data" placeholder="Texto, URL ou outro tipo de dado">
+          <input type="text" name="data" placeholder="Text, URL or other type of data">
         </div>
         <div>
-          <button type="submit">Generate</button>
+          <input type="submit" value="Generate">
         </div>
       </form>
     </div>
