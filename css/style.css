@@ -1,6 +1,6 @@
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background: rgba(113, 147, 202, 0.4);
+  background: rgba(32, 40, 185, 0.4);
 }
 #container{
   width: 500px;
@@ -9,23 +9,24 @@ body{
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 250px;
   padding-top: 20px;
   text-align: center;
 }
-input{
+input[type=text]{
   width: 80%;
   height: 40px;
   font-size: 18px;
   border: none;
-  padding-left: 20px;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
-button{
+input[type=submit]{
   width: 80%;
   height: 40px;
   font-size: 18px;
   border: none;
+  border-radius: 5px;
   background-color: #04AA6D;
   color: white;
   text-align: center;
