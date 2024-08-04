@@ -1,3 +1,25 @@
+<?php 
+
+require "vendor/autoload.php";
+
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
+
+if (isset($_POST["data"])) {
+  $data = $_POST["data"];
+
+  $options = new QROptions([
+    'version' => 5, //versao do QRCode
+    'eccLevel' => QRCode::ECC_L, //Error Correction Feature Level L
+    'outputType' => QRCode::OUTPUT_IMAGE_PNG, //setando o output como PNG
+    'imageBase64' => false //evitando que seja gerado a imagem em base64
+    ]);
+
+  file_put_contents('image.png',(new QRCode($options))->render($data)); //salvando a imagem como png
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
