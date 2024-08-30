@@ -7,15 +7,17 @@ use chillerlan\QRCode\QROptions;
 
 if (isset($_POST["data"])) {
   $data = $_POST["data"];
+  $name = uniqid().".jpg";
+  $dir = "./files/{$name}";
 
   $options = new QROptions([
     'version' => 5, //versao do QRCode
     'eccLevel' => QRCode::ECC_L, //Error Correction Feature Level L
-    'outputType' => QRCode::OUTPUT_IMAGE_PNG, //setando o output como PNG
+    'outputType' => QRCode::OUTPUT_IMAGE_JPG, //setando o output como JPG
     'imageBase64' => false //evitando que seja gerado a imagem em base64
     ]);
 
-  file_put_contents('image.png',(new QRCode($options))->render($data)); //salvando a imagem como png
+  file_put_contents($dir,(new QRCode($options))->render($data)); //salvando a imagem como jpg
 }
 
 ?>
@@ -39,6 +41,14 @@ if (isset($_POST["data"])) {
         <div>
           <input type="submit" value="Generate">
         </div>
+        <?php
+          if (isset($_POST["data"])) {
+            echo "<p>";
+            echo "QR Code gerado!<br>";
+            echo "<a href='{$dir}' target='blank'>Visualizar</a>";
+            echo "</p>";
+          }
+        ?>
       </form>
     </div>
   </body>
