@@ -1,0 +1,14 @@
+version: '3.8'
+
+# Gerando image/container php:7.4-fpm
+services:
+  php:
+    build: 
+     context: .
+    image: chillerlan-qrcode
+    container_name: chillerlan-qrcode-php
+    ports:
+      - '9000:9000'
+    volumes:
+      - '.:/var/www/html'
+    command: php -S 0.0.0.0:9000
