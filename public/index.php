@@ -8,7 +8,7 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST["data"])) {
     $data = $_POST["data"];
     $name = uniqid() . ".jpg";
-    $dir = "../files/{$name}";
+    $dir = "./assets/files/{$name}";
 
     $options = new QROptions([
         'version' => 5, //versao do QRCode
